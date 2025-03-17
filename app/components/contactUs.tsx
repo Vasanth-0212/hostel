@@ -8,7 +8,7 @@ const ContactUs = () => {
     const isMobile = useMediaQuery('(max-width: 768px)');
 
     return (
-        <div className='relative z-0 mt-20 flex flex-col space-y-2 lg:flex-row lg:space-x-[50px] lg:justify-center lg:items-center lg:pt-10 lg:pb-10'>
+        <div id='contactus' className='relative z-0 mt-20 flex flex-col space-y-2 lg:flex-row lg:space-x-[50px] lg:justify-center lg:items-center lg:pt-10 lg:pb-10'>
             {isMobile && (
                 <div className='absolute z-[-1] bottom-0 left-0 h-[400px] w-[400px] -translate-x-[200px] rounded-full bg-gray-300'>
                 </div>

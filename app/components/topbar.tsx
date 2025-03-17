@@ -5,7 +5,7 @@ import { House, Menu, X } from 'lucide-react';
 import { useMediaQuery } from 'usehooks-ts';
 
 const Topbar = () => {
-    const buttons = ["Home", "About", "Gallery", "Contact Us"];
+    const buttons = ["Home", "About", "Services", "Gallery", "Contact Us"];
     const isMobile = useMediaQuery('(max-width: 768px)');
     const [showMenuIcon, setShowMenuIcon] = useState(true);
 
@@ -19,11 +19,11 @@ const Topbar = () => {
                 <div>
                     {!isMobile ? (
                         <div className='flex space-x-10 lg:px-10'>
-                            <a href="#home" className='text-lg'>Home</a>
-                            <a href="#about" className='text-lg'>About</a>
-                            <a href="#services" className='text-lg'>Services</a>
-                            <a href="#gallery" className='text-lg'>Gallery</a>
-                            <a href="#contact" className='text-lg'>Contact Us</a>
+                            {buttons.map((button, index) => (
+                                <a key={index} href={`#${button.toLowerCase().replace(' ', '')}`} className='text-lg' style={{ animation: `fadeIn 0.5s ease ${index * 0.1}s forwards`, opacity: 0 }}>
+                                    {button}
+                                </a>
+                            ))}
                         </div>
                     ) : (
                         <div onClick={() => setShowMenuIcon(!showMenuIcon)}>
@@ -33,12 +33,23 @@ const Topbar = () => {
                 </div>
             </div>
             {!showMenuIcon && isMobile && (
-                <div className='z-50 h-screen w-screen bg-white text-black flex flex-col justify-center items-center space-y-5'>
-                    {
-                        buttons.map((button, index) => (
-                            <p key={index} style={{ animation: `fadeIn 0.5s ease ${index * 0.1}s forwards`, opacity: 0 }}>{button}</p>
-                        ))
-                    }
+                <div className='z-50 fixed inset-0 h-screen w-screen bg-gray-300 text-black flex flex-col justify-center items-center'>
+                    <div
+                    className='absolute top-0 right-0 p-5'
+                     onClick={() => setShowMenuIcon(!showMenuIcon)}>
+                        {showMenuIcon ? <Menu /> : <X />}
+                    </div>
+                    <div className='flex flex-col justify-center items-center space-y-5'>
+                        {
+                            buttons.map((button, index) => (
+                                <a key={index} style={{ animation: `fadeIn 0.5s ease ${index * 0.1}s forwards`, opacity: 0 }}
+                                    className='text-lg'
+                                    onClick={() => setShowMenuIcon(true)}
+                                    href={`#${button.toLowerCase().replace(' ', '')}`}
+                                >{button}</a>
+                            ))
+                        }
+                    </div>
                 </div>
             )}
             <style jsx>{`
