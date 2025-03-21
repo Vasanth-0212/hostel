@@ -10,20 +10,24 @@ const ContactUs = () => {
     return (
         <div id='contactus' className='relative z-0 mt-20 flex flex-col space-y-2 lg:flex-row lg:space-x-[50px] lg:justify-center lg:items-center lg:pt-10 lg:pb-10'>
             {isMobile && (
-                <div className='absolute z-[-1] bottom-0 left-0 h-[400px] w-[400px] -translate-x-[200px] rounded-full bg-gray-300'>
+                <div className='absolute z-[-1] opacity-50 bottom-0 left-0 h-[400px] w-[400px] -translate-x-[200px] rounded-full bg-gray-300'>
+                </div>
+            )}
+            {isMobile && (
+                <div className='absolute z-[-50] opacity-50 -top-5 right-0 h-[400px] w-[400px] translate-x-[200px] rounded-full bg-gray-300'>
                 </div>
             )}
 
-            <div className='z-[10] flex flex-col space-y-4 justify-center items-center w-full lg:w-1/2'>
+            <div className='z-[50] flex flex-col space-y-4 justify-center items-center w-full lg:w-1/2'>
                 <p className='text-2xl font-bold'>Contact Us</p>
-                <input type='text' placeholder='Name' className='p-2 border border-gray-300 rounded w-[90%]' />
-                <input type='tel' placeholder='Phone' className='p-2 border border-gray-300 rounded w-[90%]' />
-                <input type='email' placeholder='Email' className='p-2 border border-gray-300 rounded w-[90%]' />
-                <textarea placeholder='Message' className='p-2 border border-gray-300 rounded w-[90%]' rows={4}></textarea>
+                <input type='text' placeholder='Name' className='p-2 border border-gray-500 rounded-xl w-[90%]' />
+                <input type='tel' placeholder='Phone' className='p-2 border border-gray-500 rounded-xl w-[90%]' />
+                <input type='email' placeholder='Email' className='p-2 border border-gray-500 rounded-xl w-[90%]' />
+                <textarea placeholder='Message' className='p-2 border border-gray-500 rounded-xl w-[90%]' rows={4}></textarea>
                 <button type='submit' className='p-1 h-10 w-24 bg-black text-white rounded-xl'>Submit</button>
             </div>
 
-            <div className='z-[50] flex flex-col space-y-3 items-center justify-center mt-10 mb-10 lg:mt-0'>
+            <div className='z-[50] flex flex-col space-y-3 items-center justify-center px-5 mt-10 mb-10 lg:mt-0'>
                 <div className='flex flex-col space-y-6'>
                     <div className='flex space-x-5'>
                         <MapPin className='lg:h-10 lg:w-10' />

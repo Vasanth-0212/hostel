@@ -33,7 +33,7 @@ const Topbar = () => {
                 </div>
             </div>
             {!showMenuIcon && isMobile && (
-                <div className='z-50 fixed inset-0 h-screen w-screen bg-gray-300 text-black flex flex-col justify-center items-center'>
+                <div className='z-50 fixed inset-0 h-screen w-screen bg-gray-200 text-black flex flex-col justify-center items-center'>
                     <div
                     className='absolute top-0 right-0 p-5'
                      onClick={() => setShowMenuIcon(!showMenuIcon)}>
@@ -43,7 +43,7 @@ const Topbar = () => {
                         {
                             buttons.map((button, index) => (
                                 <a key={index} style={{ animation: `fadeIn 0.5s ease ${index * 0.1}s forwards`, opacity: 0 }}
-                                    className='text-lg'
+                                    className='text-xl'
                                     onClick={() => setShowMenuIcon(true)}
                                     href={`#${button.toLowerCase().replace(' ', '')}`}
                                 >{button}</a>

@@ -3,19 +3,19 @@ import React from 'react'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { useMediaQuery } from 'usehooks-ts';
-
+import SmoothScroll from '../components/SmoothScroll';
 
 const HomePage = () => {
     const isMobile = useMediaQuery('(max-width: 768px)');
     return (
         <div id='home' className='relative z-0 flex flex-col space-y-5 justify-center items-center h-screen w-screen lg:space-x-10 lg:flex-row sm:overflow-hidden'>
             {isMobile && (
-                <div className='absolute z-0 top-16 right-0 h-[400px] w-[400px] translate-x-[200px] rounded-full bg-gray-300'>
+                <div className='absolute opacity-80 z-0 top-16 right-0 h-[400px] w-[400px] translate-x-[200px] rounded-full bg-gray-300'>
                 </div>
                 
             )}
             {isMobile && (
-                <div className='absolute z-0 bottom-0 left-0 h-[400px] w-[400px] -translate-x-[200px] rounded-full bg-gray-300'>
+                <div className='absolute opacity-80 z-0 bottom-0 left-0 h-[400px] w-[400px] -translate-x-[200px] rounded-full bg-gray-300'>
                 </div>
             )}
             <div className='z-50'>
@@ -23,6 +23,7 @@ const HomePage = () => {
                     className='border rounded-xl lg:h-[400px] lg:w-[600px] '
                 />
             </div>
+            <SmoothScroll />
             <div className='z-50 flex flex-col justify-center items-start space-y-5 ml-8'>
                 <p className='text-xl lg:text-5xl'>Come, live
                     the new kind
@@ -30,7 +31,7 @@ const HomePage = () => {
                 <p className='text-md w-[80%] lg:w-[100%] lg:text-2xl'>
                     Life at a professionally managed accommodation awaits you.
                 </p>
-                <Button className='text-white bg-black lg:text-xl lg:p-7'>Enquire Now</Button>
+                <a href="#contactus" className='text-white bg-black h-8 w-auto p-1 px-3 rounded-2xl lg:text-xl lg:p-7'>Enquire Now</a>
             </div>
             
         </div>

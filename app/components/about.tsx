@@ -10,14 +10,14 @@ const About = () => {
     return (
         <div id='about' className='relative z-0 flex flex-col space-y-5 justify-center items-center h-screen w-screen pb-[200px] lg:space-x-10 lg:flex-row lg:pt-[150px] sm:overflow-hidden'>
 
-            {isMobile && (
+            {/* {isMobile && (
                 <div className='absolute z-0 bottom-1/4 right-0 h-[300px] w-[300px] translate-x-[150px] rounded-full bg-gray-300'>
                 </div>
             )}
             {isMobile && (
                 <div className='absolute z-0 bottom-1/4 left-0 h-[300px] w-[300px] -translate-x-[150px] rounded-full bg-gray-300'>
                 </div>
-            )}
+            )} */}
             <div className='z-50 flex flex-col justify-center items-start space-y-3'>
                 <p className='text-2xl lg:text-4xl'>About Us</p>
                 <Image src='/about.png' alt='home.png' width={300} height={400}
