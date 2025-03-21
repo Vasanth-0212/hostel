@@ -31,7 +31,7 @@ const HomePage = () => {
                 <p className='text-md w-[80%] lg:w-[100%] lg:text-2xl'>
                     Life at a professionally managed accommodation awaits you.
                 </p>
-                <a href="#contactus" className='text-white bg-black h-8 w-auto p-1 px-3 rounded-2xl lg:text-xl lg:p-7'>Enquire Now</a>
+                <a href="#contactus" className='text-white bg-black h-10 py-2 w-auto p-1 px-3 rounded-lg lg:text-xl lg:p-7'>Enquire Now</a>
             </div>
             
         </div>
